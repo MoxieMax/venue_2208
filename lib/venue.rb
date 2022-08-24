@@ -15,6 +15,14 @@ class Venue
     # patrons.each do |patron|
     #   return @patrons.upcase
   end
+  def over_capacity?
+    @patrons.count > @capacity
+  end
+  def kick_out
+    @patrons.max(@capacity)
+    # if @patrons > @capacity
+    #   return @patrons.drop
+  end
 end
 
 #rspec lib/venue.rb
